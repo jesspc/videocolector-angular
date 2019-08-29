@@ -6,7 +6,7 @@ export class Video{
     public description: string,
     public url: string,
     public status: string,
-    public createdAt: string,
-    public updateAt: string
+    public createdAt: any,
+    public updateAt: any
   ){}
 }

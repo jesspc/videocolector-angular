@@ -1,3 +1,22 @@
-<div class="col-md-12 mt-3">
+<div class="col-md-12 mt-3" *ngIf="identity">
   <h1>{{page_title}}</h1>
+</div>
+
+<div class="col-md-12 mt-3" *ngIf="!identity">
+  <div class="jumbotron">
+    <h1 class="display-4">Bienvenido al Colector de <br>
+      VIDEO FAVORITOS!</h1>
+    <p class="lead">
+      Resgistrate en la web y ten siempre disponible en un clic toda tu coleccion de videos:
+    </p>
+    <hr class="my-4">
+    <p>Si es la primera vez que nos visitas...</p>
+    <p class="lead">
+      <a class="btn bg-light btn-lg" href="#" role="button">Crear una cuenta</a>
+    </p>
+    <p>Si no, identificate para acceder a tu colecion..</p>
+    <p class="lead">
+      <a class="btn bg-light btn-lg" href="#" role="button">Mi coleccion</a>
+    </p>
+  </div>
 </div>

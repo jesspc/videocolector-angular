@@ -6,7 +6,7 @@ export class User {
     public email: string,
     public password: string,
     public role: string,
-    public createdAt: string
+    public createdAt: any
 
   ){}
 }
