@@ -1,5 +1,5 @@
 <div class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3" *ngIf="identity">
 
     <a class="navbar-brand" href="#">
       <img src="assets/images/video.png" width="30" height="30" alt="">
@@ -35,7 +35,7 @@
           {{identity.name+' '+identity.surname}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/ajustes']">Perfil</a>
+          <a class="dropdown-item" [routerLink]="['/perfil']">Perfil</a>
           <a class="dropdown-item" [routerLink]="['/logout/1']">Salir</a>
         </div>
       </li>
@@ -46,5 +46,10 @@
   <!----contenido page home--->
 
   <router-outlet></router-outlet>
+
+  <footer>
+    <hr>
+    <p>JessPC Studios Web</p>
+  </footer>
 
 </div>

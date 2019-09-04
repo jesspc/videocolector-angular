@@ -2,3 +2,42 @@
   <h1>{{page_title}}</h1>
 </div>
 
+<div class="alert alert-success col-md-6 mt-3" *ngIf="status == 'success'">
+  El video se ha guardado correctamente.
+</div>
+
+<div class="alert alert-danger col-md-6 mt-3" *ngIf="status == 'error'">
+  Un error ha impedido guardar el video.
+</div>
+
+<form class="col-md-6 ml-0 mt-0" #videoForm="ngForm"  (ngSubmit)="onSubmit(videoForm)">
+  <div class="form-group">
+    <label for="title">Titulo:</label>
+    <input type="text" name="title" #title="ngModel" [(ngModel)]="video.title" class="form-control"
+           required>
+    <small *ngIf="!title.valid && title.touched" class="invalid-feedback d-block">
+      El titulo no es valido.
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Breve reseña:</label>
+    <textarea name="description" #description="ngModel" [(ngModel)]="video.description" class="form-control"
+              required></textarea>
+    <small *ngIf="!description.valid && description.touched" class="invalid-feedback d-block">
+      Por favor, agregue una pequeña descripción.
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="url">URL:</label>
+    <input type="text" name="url" #url="ngModel" [(ngModel)]="video.url" class="form-control"
+           required>
+    <small *ngIf="!url.valid && url.touched" class="invalid-feedback d-block">
+      La Url no es valida.
+    </small>
+  </div>
+
+  <input type="submit" value="Guardar" class="button bg-light" [disabled]="videoForm.invalid">
+
+</form>

@@ -51,7 +51,6 @@ export class LoginComponent implements OnInit {
 
                        this._router.navigate(['/inicio']);
 
-
                      }else{
                        this.status = 'error';
                      }
@@ -69,6 +68,7 @@ export class LoginComponent implements OnInit {
         error => {
          console.log(error);
          this.status = 'error';
+
        }
     );
   }
